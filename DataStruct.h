@@ -5,6 +5,7 @@
 
 */
 
+#include <iostream>
 
 #ifndef DATASTRUCT_H
 #define DATASTRUCT_H
@@ -13,6 +14,8 @@ template <class ElemType>
 class DataStruct
 {
     public:
+
+        DataStruct(){std::cout << "Calling base empty constructor" << std::endl;};
         DataStruct(int maxSize):m_maxSize(maxSize), m_size(0){std::cout << "Calling base constructor" << std::endl;};
         ~DataStruct(){std::cout << "Calling base destructor" << std::endl;};
 

@@ -1,6 +1,7 @@
 #include <iostream>
-#include "Queue.h"
-#include "Stack.h"
+#include "Queue.cpp"
+#include "Stack.cpp"
+#include "LinkedList.cpp"
 #include "DataStruct.h"
 
 using namespace std;
@@ -53,12 +54,38 @@ void QueueExample(){
 }
 
 
+void LinkedListExample(){
+
+
+    LinkedList<int> * ll = new LinkedList<int>;
+
+    ll->push_front(8);
+    ll->push_back(12);
+    ll->push_back(33);
+    ll->push_back(3);
+    ll->push_before_nth_node(132, 2);
+    ll->pop_front();
+    ll->pop_back();
+    ll->pop_nth_node(2);
+    ll->print();
+
+    std::cout << "Total nodes / average = " << ll->count_nodes() << " / " << ll->average() << std::endl;
+
+
+    delete ll;
+
+}
+
+
+
 
 
 int main()
 {
     //StackExample();
-    QueueExample();
+    //QueueExample();
+    LinkedListExample();
+
 
     return 0;
 }
